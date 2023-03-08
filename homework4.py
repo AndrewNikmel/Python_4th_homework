@@ -6,19 +6,19 @@
 # сами элементы множеств.
 
 
-m = int(input("Введите количество элементов первого множества: "))
-n = int(input("Введите количество элементов второго множества: "))
-lst_m = []
-lst_n = []
-for i in range(m):
-    lst_m.append(int(input(f"Введите {i}-й элемент 1-го множества: ")))
-for j in range(n):
-    lst_n.append(int(input(f"Введите {j}-й элемент 2-го множества: ")))
-print(lst_m)
-print(lst_n)
-res_m = set(lst_m) 
-res_n = set(lst_n)
-print(f"Числа, которые встречаются в обоих множествах: {res_m.intersection(res_n)}")
+# m = int(input("Введите количество элементов первого множества: "))
+# n = int(input("Введите количество элементов второго множества: "))
+# lst_m = []
+# lst_n = []
+# for i in range(m):
+#     lst_m.append(int(input(f"Введите {i}-й элемент 1-го множества: ")))
+# for j in range(n):
+#     lst_n.append(int(input(f"Введите {j}-й элемент 2-го множества: ")))
+# print(lst_m)
+# print(lst_n)
+# res_m = set(lst_m) 
+# res_n = set(lst_n)
+# print(f"Числа, которые встречаются в обоих множествах: {res_m.intersection(res_n)}")
 
 
 # Задача 24: В фермерском хозяйстве в Карелии выращивают чернику. 
@@ -34,3 +34,15 @@ print(f"Числа, которые встречаются в обоих множ
 # Напишите программу для нахождения максимального числа ягод, которое может 
 # собрать за один заход собирающий модуль, находясь перед некоторым кустом 
 # заданной во входном файле грядки.
+
+n = int(input("Введите количество кустов черники: "))
+bushes = []
+maximal = 0
+for i in range(n):
+    bushes.append(int(input(f"Введите количество ягод на {i+1}-м кусте: ")))
+print(bushes)
+new_list = []
+for i in range(len(bushes)-1):
+    new_list.append(bushes[i-1] + bushes[i] + bushes[i+1])
+new_list.append(bushes[-2] + bushes[-1]+bushes[0])
+print(max(new_list))
